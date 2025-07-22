@@ -1,0 +1,131 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.12.2
+    cli_version: 0.17.7
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1740301199
+    t:
+      1:
+      - 1
+      - 5
+      - 51
+      - 53
+      - 55
+      - 77
+      2:
+      - 1
+      - 5
+      - 51
+      - 53
+      - 55
+      - 77
+      3:
+      - 2
+      - 23
+      - 37
+      4: 3.12.2
+      5: 0.17.7
+      8:
+      - 5
+      13: linux-x86_64
+data.batch_size:
+  desc: null
+  value: 64
+data.construct_edges:
+  desc: null
+  value: false
+data.input_dir:
+  desc: null
+  value: /ssd3/giorgian/hits-data-january-2024-yasser/trigger/events/
+data.input_dir2:
+  desc: null
+  value: /ssd3/giorgian/hits-data-january-2024-yasser/nontrigger/events/
+data.load_full_event:
+  desc: null
+  value: false
+data.n_folders:
+  desc: null
+  value: 2
+data.n_mix:
+  desc: null
+  value: 1
+data.n_train:
+  desc: null
+  value: 24300
+data.n_valid:
+  desc: null
+  value: 10000
+data.n_workers:
+  desc: null
+  value: 16
+data.name:
+  desc: null
+  value: hit_graph_trigger_pileup
+data.phi_slope_max:
+  desc: null
+  value: 0.012193355583173944
+data.real_weight:
+  desc: null
+  value: 1
+data.use_intt:
+  desc: null
+  value: true
+data.z0_max:
+  desc: null
+  value: 14.220353082111805
+model.hidden_activation:
+  desc: null
+  value: PReLU
+model.hidden_dim:
+  desc: null
+  value: 64
+model.input_dim:
+  desc: null
+  value: 5
+model.layer_norm:
+  desc: null
+  value: true
+model.loss_func:
+  desc: null
+  value: binary_cross_entropy_with_logits
+model.n_graph_iters:
+  desc: null
+  value: 1
+model.name:
+  desc: null
+  value: garnet_trigger
+optimizer.beta_1:
+  desc: null
+  value: 0.6605405163254378
+optimizer.beta_2:
+  desc: null
+  value: 0.999
+optimizer.eps:
+  desc: null
+  value: 1.0836506427317458e-05
+optimizer.learning_rate:
+  desc: null
+  value: 0.009220222053592842
+optimizer.learning_rate_decay_rate:
+  desc: null
+  value: 0.824440134167794
+optimizer.name:
+  desc: null
+  value: Adam
+optimizer.weight_decay:
+  desc: null
+  value: 4.671895621324638e-07
+output_dir:
+  desc: null
+  value: trigger_results/agnn/
+trainer.name:
+  desc: null
+  value: gnn_trigger
+training.n_total_epochs:
+  desc: null
+  value: 12

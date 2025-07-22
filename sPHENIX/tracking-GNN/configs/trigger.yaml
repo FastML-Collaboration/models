@@ -1,0 +1,57 @@
+output_dir: tracking_results/train/
+
+model_name_on_wandb: trigger-gnn
+
+trainer:
+    name: gnn_trigger
+
+data:
+    name: hit_graph_bp
+    # input_dir: /largehome/tingting/noise_removal/parsed_D0_Iteration6
+    # input_dir2: /largehome/tingting/noise_removal/parsed_In_Iteration6
+    # input_dir: /largehome/tingting/Data/parsed_data_allinfo/parsed_D0_Iteration6_allinfo
+    # input_dir2: /largehome/tingting/Data/parsed_data_allinfo/parsed_In_Iteration6_allinfo
+    #input_dir: /ssd3/giorgian/hits-data-october-2024/trigger/1/
+    #input_dir2: /ssd2/giorgian/hits-data-august-2022/nontrigger/0/
+    input_dir: /ssd3/giorgian/hits-data-january-2024-yasser/trigger/events/
+    input_dir2: /ssd3/giorgian/hits-data-january-2024-yasser/nontrigger/events/
+    n_train: 20000 #0
+    n_valid: 10000 #0 #0
+    real_weight: 50
+    batch_size: 64
+    n_workers: 16
+    n_folders: 2
+    phi_slope_max: 0.012193355583173944
+    z0_max: 14.220353082111805
+    n_mix: 20
+    trigger_edge_weight: 10
+    use_intt: True
+    load_full_event: False
+    ramp_up_nmix: False
+    ramp_rate: 3
+    apply_constraints: True
+
+model:
+    name: bgn_st_trigger
+    mvtx_input_dim: 5
+    intt_input_dim: 10
+    hidden_dim: 16
+    hidden_activation: ReLU
+    n_graph_iters: 1
+    layer_norm: false
+    phi_slope_max: 0.012193355583173944
+    z0_max: 14.220353082111805
+    apply_constraints: False
+
+optimizer:
+    name: Adam
+    learning_rate: 0.0001
+    weight_decay: 1.e-4
+    lr_decay_schedule:
+        - {start_epoch: 8, end_epoch: 16, factor: 0.1}
+    beta_1: 0.9
+    beta_2: 0.999
+    eps: 1.0e-8
+
+training:
+    n_total_epochs: 16

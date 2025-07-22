@@ -1,0 +1,62 @@
+wandb_version: 1
+
+data.batch_size:
+  value: 32
+data.input_dir:
+  value: /ssd3/giorgian/hits-data-march-2024/trigger/1/
+data.input_dir2:
+  value: /ssd2/giorgian/hits-data-august-2022/nontrigger/0/
+data.n_folders:
+  value: 2
+data.n_mix:
+  value: 12
+data.n_train:
+  value: 500000
+data.n_valid:
+  value: 100000
+data.n_workers:
+  value: 16
+data.name:
+  value: hit_graph
+data.phi_slope_max:
+  value: 0.012193355583173944
+data.real_weight:
+  value: 0.2449596339468477
+data.use_intt:
+  value: false
+data.z0_max:
+  value: 14.220353082111805
+model.hidden_activation:
+  value: ReLU
+model.hidden_dim:
+  value: 8
+model.input_dim:
+  value: 5
+model.layer_norm:
+  value: false
+model.loss_func:
+  value: binary_cross_entropy_with_logits
+model.n_graph_iters:
+  value: 1
+model.name:
+  value: agnn
+optimizer.beta_1:
+  value: 0.35022011532605474
+optimizer.beta_2:
+  value: 0.999
+optimizer.eps:
+  value: 1.5626537969930546e-06
+optimizer.learning_rate:
+  value: 0.00015554546748344582
+optimizer.learning_rate_decay_rate:
+  value: 0.9490444007821824
+optimizer.name:
+  value: Adam
+optimizer.weight_decay:
+  value: 3.505311688132074e-05
+output_dir:
+  value: tracking_results/agnn/
+trainer.name:
+  value: gnn_sparse
+training.n_total_epochs:
+  value: 12

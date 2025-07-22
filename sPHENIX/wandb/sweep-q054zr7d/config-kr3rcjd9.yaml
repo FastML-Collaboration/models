@@ -1,0 +1,52 @@
+wandb_version: 1
+
+data.batch_size:
+  value: 512
+data.dphi_max:
+  value: 0.012193355583173944
+data.dz_max:
+  value: 14.220353082111805
+data.input_dir:
+  value: /ssd2/giorgian/HFMLNewFiles-hits-1/trigger/1/
+data.input_dir2:
+  value: /ssd2/giorgian/HFMLNewFiles-hits-1/nontrigger/0/
+data.n_folders:
+  value: 2
+data.n_train:
+  value: 500000
+data.n_valid:
+  value: 100000
+data.n_workers:
+  value: 16
+data.name:
+  value: hitgraphs_sparse_new
+data.real_weight:
+  value: 0.25158034367247356
+model.hidden_activation:
+  value: ReLU
+model.input_dim:
+  value: 8
+model.layer_norm:
+  value: false
+model.loss_func:
+  value: binary_cross_entropy_with_logits
+model.n_graph_iters:
+  value: 1
+model.name:
+  value: agnn
+optimizer.beta_1:
+  value: 0.2804321894718089
+optimizer.beta_2:
+  value: 0.999
+optimizer.eps:
+  value: 0.008335446746525315
+optimizer.learning_rate:
+  value: 0.0004605084650717068
+optimizer.learning_rate_decay_rate:
+  value: 0.9128436012580724
+optimizer.name:
+  value: Adam
+optimizer.weight_decay:
+  value: 7.146586394989569e-07
+training.n_total_epochs:
+  value: 12

@@ -1,0 +1,72 @@
+output_dir: train_results/biatt-supcon-full/
+wandb:
+  project_name: physics-trigger
+  run_name: biatt-c-slaps
+  tags: ["biatt", "baseline", "loopy", "contrastive+slaps", "mean-pool"]
+
+epochs: 25
+optimizer:
+  type: Adam
+  momentum: 0.9
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+
+model_mod: 1
+model:
+  num_features: 30
+  layers_spec: [[64, 8], [64, 8], [64, 8]]
+  bn: False
+  ln: False
+  num_classes: 2
+  aggregator_activation: softmax
+  recalculate_hits_mean: True
+  self_split: False
+  corruption_probability: 0.2
+  n_neighbors: 6
+  sag_pool: False
+
+data:
+        name: gt-trkvec-masked
+        trigger_input_dir: /ssd2/tingting/HFMLNewFiles-old-parsed/trigger/1/
+        nontrigger_input_dir: /ssd2/tingting/HFMLNewFiles-old-parsed/nontrigger/0/
+        #trigger_input_dir: /home1/giorgian/projects/parsing/parsed/trigger/1
+        #nontrigger_input_dir: /home1/giorgian/projects/parsing/parsed/nontrigger/0
+        #trigger_input_dir: /ssd2/giorgian/tracks-energy/trigger/
+        #nontrigger_input_dir: /ssd2/giorgian/tracks-energy/non-trigger/
+        #trigger_input_dir:  /ssd2/tingting/highm_predicted_trk/trigger/1
+        #nontrigger_input_dir: /ssd2/tingting/highm_predicted_trk/nontrigger/0
+        #trigger_input_dir: /ssd2/giorgian/predicted-physics/trigger/
+        #nontrigger_input_dir: /ssd2/giorgian/predicted-physics/non-trigger/
+        #trigger_input_dir: /ssd2/giorgian/5hit-tracks/trigger/
+        #nontrigger_input_dir: /ssd2/giorgian/5hit-tracks/non-trigger/
+
+        n_train: 500000
+        n_valid: 100000
+        n_test: 100000
+        batch_size: 32
+
+        add_geo_features: True
+        use_radius: True
+        use_predicted_pz: True
+        use_energy: False
+        use_momentum: False
+        use_transverse_momentum: False
+        use_parallel_momentum: False
+          #use_filter: False
+          #filter_n_hits: 5
+          #trigger_correction: True
+
+        use_physics_pred: False
+
+        n_workers: 1
+        load_complete_graph: False
+
+contrast:
+  n_negative: 20
+  n_positive: 20
+  drop_probability: 0.25
+  loss:
+    temperature: 1.6
+
+slaps:
+  dae_weight: 0.002

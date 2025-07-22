@@ -1,0 +1,33 @@
+model_name: PVCNN
+output_dir: /largehome/tingting/trigger_pred/wandb_results/
+epochs: 100
+
+model_name_on_wandb: PVCNN
+
+model:
+  learning_rate: 0.0005
+  lr_scheduler_decrease_rate: 0.99
+  in_channels: 1
+  out_channels: 24
+  kernel_size: 3
+  resolution: 100
+
+data:
+    name: hits_loader
+    input_dir: /superhome/tingtingxuan/Data/tracking_result_allinfo/tracking_result_with_noise_In_dim8
+    # input_dir: /home/tingting/tracking/tracking_result_with_noise_In
+    # input_dir: ../prepare/scaled_hits_data/nontrigger-event/NN
+    n_train: 50000
+    n_valid: 5000
+    real_weight: 1
+    false_weight: 1
+    batch_size: 50
+    n_input_dir: 2
+    input_dir2: /superhome/tingtingxuan/Data/tracking_result_allinfo/tracking_result_with_noise_D0_dim8
+    # input_dir2: /home/tingting/tracking/tracking_result_with_noise_D0
+    # input_dir3: ../prepare/hits_data/nontrigger-event/ND
+    random_permutation: True
+    n_train2: 50000
+    n_valid2: 5000
+    n_train3: 0 #00
+    n_valid3: 0 #00

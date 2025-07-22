@@ -1,0 +1,72 @@
+output_dir: train_results/pns/
+tensorboard_output_dir: runs/pns/
+
+# TODO:
+# Try with ce_weight=0
+# Try with use_extra_pos=True
+# (ce_weight=0, use_extra_pos=True)
+# (ce_weight=1, use_extra_pos=False) <- Being checked
+# (ce_weight=1, use_extra_pos=True)
+# (ce_weight=0, use_extra_pos=False)
+
+epochs: 50
+checkpoint_file_pnl: 'train_results/particlenet-laplace/experiment_2022-11-08_14:41:35/checkpoints/model_checkpoint_006.pth.tar'
+threshold: 1.0
+
+optimizer:
+  type: Adam
+  momentum: 0.9
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+
+adj_model:
+  type: particlenet-laplace
+  input_dim: 15
+  hidden_dim: 64
+  hidden_activation: ReLU
+  layer_norm: True
+  affinity_loss: True
+  affinity_loss_CE_weight: 1
+  affinity_loss_Lp_weight: 0.000001
+  affinity_loss_11_weight: 0.000001
+  affinity_loss_frobenius_weight: 0.000001
+  d_metric: intertrack #einsum
+  pairwise_attention: True
+  k: 16
+  GNN_config:
+    hidden_activation: ReLU
+    layer_norm: True
+    n_graph_iters: 3
+
+model:
+  is_hierarchical: True
+  num_features: 79 # particlenet + raw track features
+  nhid: 64
+  num_classes: 2
+  pooling_ratio: 0.75
+  dropout_ratio: 0.3
+  use_edge_attr: False
+
+data:
+        # name: gt-trkgraph-nomasked
+        # input_dir: /ssd2/tingting/HFMLNewFiles-old-parsed/trigger/1
+        # input_dir2: /ssd2/tingting/HFMLNewFiles-old-parsed/nontrigger/0
+        name: pred-trackgraph-nomask
+        # input_dir: /ssd2/tingting/alltrack_predicted_trk/trigger/1
+        # input_dir2: /ssd2/tingting/alltrack_predicted_trk/nontrigger/0
+        input_dir: /ssd2/tingting/highm_predicted_trk/trigger/1
+        input_dir2: /ssd2/tingting/highm_predicted_trk/nontrigger/0
+        n_train1: 500000
+        n_valid1: 200000
+        n_test1: 200000
+        n_train2: 500000
+        n_valid2: 200000
+        n_test2: 200000
+        add_geo_features: True
+        use_radius: True
+        use_pz: False
+        use_pt: False
+        use_predicted_pz: False
+        batch_size: 256
+        n_workers: 4
+        load_complete_graph: False

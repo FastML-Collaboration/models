@@ -1,0 +1,41 @@
+output_dir: train_results/gt-pz/
+tensorboard_output_dir: runs/gt-pz/
+
+name_on_wandb: bgnst-alltrk
+
+epochs: 50
+optimizer:
+  type: Adam
+  momentum: 0.9
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+
+model:
+  num_features: 15 # raw track features
+  layers_spec: [[32, 32], [32, 32], [32, 32]] # [[64, 8], [128, 16], [64, 8]]
+  num_classes: 2
+  aggregator_activation: Softmax
+  ln: False
+  dropout: False
+  dropout_rate: 0.0
+
+data:
+        name: pred-trkvec-masked
+        # input_dir: /ssd2/tingting/alltrack_predicted_trk/trigger/1
+        # input_dir2: /ssd2/tingting/alltrack_predicted_trk/nontrigger/0
+        input_dir: /ssd2/tingting/highm_predicted_trk/trigger/1
+        input_dir2: /ssd2/tingting/highm_predicted_trk/nontrigger/0
+        n_train1: 500000
+        n_valid1: 200000
+        n_test1: 200000
+        n_train2: 500000
+        n_valid2: 200000
+        n_test2: 200000
+        add_geo_features: True
+        use_radius: False
+        use_pz: False
+        use_pt: False
+        use_predicted_pz: False
+        batch_size: 32
+        n_workers: 4
+        load_complete_graph: False

@@ -1,0 +1,46 @@
+output_dir: /home1/tingtingxuan/trigger-detection-pipeline/tracking_result/tracking_new
+
+model_name_on_wandb: tracking-gnn-fixcluster
+
+trainer:
+    name: gnn_sparse
+
+data:
+    name: hitgraphs_sparse_2
+    # input_dir: /largehome/tingting/noise_removal/parsed_D0_Iteration6
+    # input_dir2: /largehome/tingting/noise_removal/parsed_In_Iteration6
+    # input_dir: /largehome/tingting/Data/parsed_data_allinfo/parsed_D0_Iteration6_allinfo
+    # input_dir2: /largehome/tingting/Data/parsed_data_allinfo/parsed_In_Iteration6_allinfo
+    # input_dir: /home1/tingtingxuan/Data/tracking_improve_attemp/new_parsed_data_sc/trigger
+    # input_dir2: /home1/tingtingxuan/Data/tracking_improve_attemp/new_parsed_data_sc/nontrigger
+    # input_dir: /home1/tingtingxuan/Data/parsed_7layer_hits_new/trigger
+    # input_dir2: /home1/tingtingxuan/Data/parsed_7layer_hits_new/nontrigger
+    # input_dir: /home1/tingtingxuan/Data/parsed_INTTclustered_hits/trigger
+    # input_dir2: /home1/tingtingxuan/Data/parsed_INTTclustered_hits/nontrigger
+    input_dir: /home1/tingtingxuan/parser_for_7layer_data/new_parsed_INTTclustered_hits/trigger
+    input_dir2: /home1/tingtingxuan/parser_for_7layer_data/new_parsed_INTTclustered_hits/nontrigger
+    n_train: 500000
+    n_valid: 50000
+    real_weight: 1
+    batch_size: 32
+    n_workers: 8
+    n_folders: 2
+
+model:
+    name: agnn
+    input_dim: 5
+    hidden_dim: 1024
+    hidden_activation: Tanh
+    n_graph_iters: 8
+    layer_norm: True
+    loss_func: binary_cross_entropy
+
+optimizer:
+    name: Adam
+    learning_rate: 0.0001
+    weight_decay: 1.e-4
+    lr_decay_schedule:
+        - {start_epoch: 60, end_epoch: 128, factor: 0.1}
+
+training:
+    n_total_epochs: 128

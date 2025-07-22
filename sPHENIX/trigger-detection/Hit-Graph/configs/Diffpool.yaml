@@ -1,0 +1,32 @@
+model_name: Diffpool
+output_dir: train_results
+epochs: 50
+
+model_name_on_wandb: diffpool
+
+model:
+  hidden_dim: 64
+  hidden_activation: Tanh
+  layer_norm: False
+  learning_rate: 0.005
+  lr_scheduler_decrease_rate: 0.95
+  diff_pool_config:
+    max_num_nodes: 500
+    hidden_dim: 64
+    embedding_dim: 64
+    label_dim: 1
+    num_layers: 2
+    num_pooling: 1
+    assign_hidden_dim: 64
+    assign_dims_list: [10]
+    use_assign_dims: True
+    linkpred: True
+
+data:
+    name: new_hits_loader
+    input_dir1: /ssd2/tingting/alltrack_predicted_edge/trigger/1
+    input_dir2: /ssd2/tingting/alltrack_predicted_edge/nontrigger/0
+    n_train: 500000
+    n_valid: 200000
+    n_test: 200000
+    batch_size: 1024

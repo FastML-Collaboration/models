@@ -1,0 +1,78 @@
+output_dir: train_results/tmp/
+wandb:
+  project_name: physics-trigger
+  run_name: biatt-blri
+  tags: ["biatt", "blri", "loopy", "layernorm", "batchnorm", "prelu"]
+
+loss: 
+  mse_weight: 0.001
+  adj_weight: 0.001
+  #beta: 10
+
+epochs: 4
+optimizer:
+  finetune_factor: 0.00000000165554383046
+  type: Adam
+  learning_rate: 0.00008014451108346615
+  beta_1: 0.7650424449768395
+  beta_2: 0.999
+  eps: 0.00003891674021588362
+  weight_decay: 0.00001892968038142768
+  learning_rate_decay_rate: 0.00008014451108346615
+
+model_mod: 1
+model:
+  num_features: 37
+  layers_spec: [[64, 8], [64, 8], [64, 8], [64, 8]]
+  ln: True
+  bn: False
+  num_classes: 4
+  aggregator_activation: softmax
+  recalculate_hits_mean: True
+  self_split: False
+  hidden_activation: PReLU
+  final_pooling: False
+
+data:
+        name: tracks
+          #trigger_input_dir: /ssd2/giorgian/HFML-NewFiles-1/trigger/1/
+          #nontrigger_input_dir: /ssd2/giorgian/HFML-NewFiles-1/nontrigger/0/
+          #trigger_input_dir: /ssd2/giorgian/HFMLNewFiles-hits/trigger/1/
+          #nontrigger_input_dir: /ssd2/giorgian/HFMLNewFiles-hits/nontrigger/0/
+          #trigger_input_dir: /ssd1/giorgian/mvtx-sweep-0/icy-sweep-31/trigger/1/
+          #trigger_input_dir: /ssd2/giorgian/hits-data-august-2022/trigger/1/
+          #nontrigger_input_dir: /ssd2/giorgian/hits-data-august-2022/nontrigger/0/
+          #nontrigger_input_dir: /ssd1/giorgian/mvtx-sweep-0/icy-sweep-31/nontrigger/0/
+        trigger_input_dir: /ssd1/giorgian/tracks-data-august-2022/trigger/1/
+        nontrigger_input_dir: /ssd1/giorgian/tracks-data-august-2022/nontrigger/0/
+          #trigger_input_dir: /ssd1/giorgian/tracking-sweep-0/wordly-sweep-192/trigger/1/
+          #nontrigger_input_dir: /ssd1/giorgian/tracking-sweep-0/wordly-sweep-192/nontrigger/0/
+
+        rescale_by_percentile: -1
+
+        n_train: 5000 #00
+        n_valid: 1000 #00
+        n_test: 1000 #00
+        batch_size: 128
+        min_edge_probability: 0.6
+
+        use_geometric_features: True
+        use_radius: True
+        use_predicted_pz: True
+        use_energy: False
+        use_momentum: False
+        use_center: True
+        use_parallel_momentum: False
+        use_n_hits: True
+
+          #use_n_pixels: False
+          #use_n_hits: True
+          #use_cylindrical_std: True
+          #use_hit_type: True
+          #n_hit_type: 1
+
+          #dphi_max: 0.015
+          #dz_max: 100
+
+        n_workers: 16
+

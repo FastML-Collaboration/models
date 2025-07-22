@@ -1,0 +1,99 @@
+wandb_version: 1
+
+data.batch_size:
+  desc: null
+  value: 256
+data.max_radius:
+  desc: null
+  value: 0.0030294122292240854
+data.n_test:
+  desc: null
+  value: 100000
+data.n_train:
+  desc: null
+  value: 500000
+data.n_valid:
+  desc: null
+  value: 100000
+data.n_workers:
+  desc: null
+  value: 16
+data.name:
+  desc: null
+  value: pixel_graph
+data.nontrigger_input_dir:
+  desc: null
+  value: /ssd2/giorgian/pixels-data-august-2022/nontrigger/0
+data.trigger_input_dir:
+  desc: null
+  value: /ssd2/giorgian/pixels-data-august-2022/trigger/1/
+epochs:
+  desc: null
+  value: 16
+model.hidden_dim:
+  desc: null
+  value: 64
+model.input_dim:
+  desc: null
+  value: 3
+model.name:
+  desc: null
+  value: gat
+optimizer.beta_1:
+  desc: null
+  value: 0.3241833985622973
+optimizer.beta_2:
+  desc: null
+  value: 0.999
+optimizer.eps:
+  desc: null
+  value: 1.219630032274107e-05
+optimizer.finetune_factor:
+  desc: null
+  value: 1.1946925389283133e-08
+optimizer.learning_rate:
+  desc: null
+  value: 0.0037181197916673512
+optimizer.learning_rate_decay_rate:
+  desc: null
+  value: 0.8741720093904509
+optimizer.type:
+  desc: null
+  value: Adam
+optimizer.weight_decay:
+  desc: null
+  value: 0.00012894702991260253
+output_dir:
+  desc: null
+  value: train_results/cluster-gat/
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.4
+    cli_version: 0.15.9
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1694800648.882121
+    t:
+      1:
+      - 1
+      - 5
+      - 53
+      - 55
+      - 77
+      2:
+      - 1
+      - 5
+      - 53
+      - 55
+      - 77
+      3:
+      - 2
+      - 15
+      - 23
+      - 37
+      4: 3.11.4
+      5: 0.15.9
+      8:
+      - 5

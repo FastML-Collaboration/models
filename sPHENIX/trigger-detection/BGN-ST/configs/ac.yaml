@@ -1,0 +1,56 @@
+output_dir: train_results/biatt-supcon-full/
+wandb:
+  project_name: physics-trigger
+  run_name: biatt-ac
+  tags: ["biatt", "ac", "baseline", "loopy"]
+
+epochs: 25
+optimizer:
+  type: Adam
+  momentum: 0.9
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+
+model_mod: 1
+model:
+  num_features: 37
+  layers_spec: [[64, 8], [64, 8], [64, 8]] # [[64, 8], [128, 16], [64, 8]]
+  ln: False
+  num_classes: 2
+  aggregator_activation: softmax
+  recalculate_hits_mean: True
+  self_split: False
+
+data:
+        name: tracks
+        trigger_input_dir: /ssd3/giorgian/tracks-data-august-2022/trigger/1/
+        nontrigger_input_dir: /ssd3/giorgian/tracks-data-august-2022/nontrigger/0/
+        rescale_by_percentile: -1
+
+          #use_true_edges: False
+        n_train: 80000 #0
+        n_valid: 20000 #0
+        n_test: 20000 #00
+        batch_size: 64
+
+        use_geometric_features: True
+        use_radius: True
+        use_predicted_pz: True
+        use_energy: False
+        use_momentum: False
+        use_center: True
+        use_parallel_momentum: False
+
+        use_n_pixels: False
+        use_n_hits: True
+        drop_nontrigger_percentage: 0.5
+
+
+        n_workers: 16
+ 
+contrast:
+  n_negative: 20
+  n_positive: 20
+  drop_probability: 0.25
+  loss:
+    temperature: 1.6

@@ -1,0 +1,66 @@
+wandb_version: 1
+
+data.batch_size:
+  value: 64
+data.construct_edges:
+  value: false
+data.input_dir:
+  value: /ssd3/giorgian/hits-data-january-2024-yasser/trigger/events/
+data.input_dir2:
+  value: /ssd3/giorgian/hits-data-january-2024-yasser/nontrigger/events/
+data.load_full_event:
+  value: false
+data.n_folders:
+  value: 2
+data.n_mix:
+  value: 1
+data.n_train:
+  value: 24300
+data.n_valid:
+  value: 10000
+data.n_workers:
+  value: 16
+data.name:
+  value: hit_graph_trigger_pileup
+data.phi_slope_max:
+  value: 0.012193355583173944
+data.real_weight:
+  value: 1
+data.use_intt:
+  value: true
+data.z0_max:
+  value: 14.220353082111805
+model.hidden_activation:
+  value: PReLU
+model.hidden_dim:
+  value: 64
+model.input_dim:
+  value: 5
+model.layer_norm:
+  value: true
+model.loss_func:
+  value: binary_cross_entropy_with_logits
+model.n_graph_iters:
+  value: 1
+model.name:
+  value: garnet_trigger
+optimizer.beta_1:
+  value: 0.4904734218752947
+optimizer.beta_2:
+  value: 0.999
+optimizer.eps:
+  value: 0.001938999515373848
+optimizer.learning_rate:
+  value: 0.0017469604080899868
+optimizer.learning_rate_decay_rate:
+  value: 0.8793627974346169
+optimizer.name:
+  value: Adam
+optimizer.weight_decay:
+  value: 1.4292902808020565e-06
+output_dir:
+  value: trigger_results/agnn/
+trainer.name:
+  value: gnn_trigger
+training.n_total_epochs:
+  value: 12

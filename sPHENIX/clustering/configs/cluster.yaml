@@ -1,0 +1,44 @@
+output_dir: train_results/biatt-augment-adj/
+wandb:
+  project_name: physics-trigger
+  run_name: biatt-blri
+  tags: ["biatt", "blri", "loopy", "layernorm", "batchnorm", "prelu"]
+
+loss: 
+  mse_weight: 0.001
+  adj_weight: 0.001
+  #beta: 10
+
+epochs: 10
+optimizer:
+  finetune_factor: 0.00000000165554383046
+  type: Adam
+  learning_rate: 0.00008014451108346615
+  beta_1: 0.7650424449768395
+  beta_2: 0.999
+  eps: 0.00003891674021588362
+  weight_decay: 0.00001892968038142768
+  learning_rate_decay_rate: 0.00008014451108346615
+
+model:
+  name: gat
+  input_dim: 3
+  hidden_dim: 64
+
+data:
+      name: pixel_graph
+          #trigger_input_dir: /ssd2/giorgian/HFML-NewFiles-1/trigger/1/
+          #nontrigger_input_dir: /ssd2/giorgian/HFML-NewFiles-1/nontrigger/0/
+          #trigger_input_dir: /ssd2/giorgian/HFMLNewFiles-hits/trigger/1/
+          #nontrigger_input_dir: /ssd2/giorgian/HFMLNewFiles-hits/nontrigger/0/
+      trigger_input_dir: /ssd2/giorgian/pixels-data-august-2022/trigger/1
+      nontrigger_input_dir: /ssd2/giorgian/pixels-data-august-2022/nontrigger/0
+      max_radius: 0.005
+
+      n_train: 500000
+      n_valid: 10000 #0
+      n_test: 1000 #00
+      batch_size: 256
+
+      n_workers: 16
+

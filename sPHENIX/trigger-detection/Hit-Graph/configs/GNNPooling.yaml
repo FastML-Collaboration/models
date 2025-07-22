@@ -1,0 +1,23 @@
+model_name: GNNPooling
+output_dir: train_results
+epochs: 50
+
+model_name_on_wandb: GNNPooling-sum-highm
+
+model:
+    input_dim: 4
+    hidden_dim: 8
+    hidden_activation: Tanh
+    layer_norm: True
+    n_graph_iters: 4
+    learning_rate: 0.001
+    lr_scheduler_decrease_rate: 0.95
+
+data:
+    name: new_hits_loader
+    input_dir1: /ssd2/tingting/highm_predicted_edge/trigger/1
+    input_dir2: /ssd2/tingting/highm_predicted_edge/nontrigger/0
+    n_train: 500000
+    n_valid: 200000
+    n_test: 200000
+    batch_size: 1024

@@ -1,0 +1,54 @@
+output_dir: tracking_results/train/
+
+model_name_on_wandb: trigger-gnn
+
+trainer:
+    name: gnn_active
+
+data:
+    name: hit_graph_trigger_pileup
+    # input_dir: /largehome/tingting/noise_removal/parsed_D0_Iteration6
+    # input_dir2: /largehome/tingting/noise_removal/parsed_In_Iteration6
+    # input_dir: /largehome/tingting/Data/parsed_data_allinfo/parsed_D0_Iteration6_allinfo
+    # input_dir2: /largehome/tingting/Data/parsed_data_allinfo/parsed_In_Iteration6_allinfo
+    #input_dir: /ssd1/giorgian/hits-data-august-2022-ctypes/trigger/1/
+    input_dir: /ssd3/giorgian/hits-data-march-2024/trigger/1/
+    input_dir2: /ssd2/giorgian/hits-data-august-2022/nontrigger/0/
+    n_train: 80000 #0
+    n_valid: 17500 #00
+    real_weight: 1
+    batch_size: 12
+    n_workers: 16
+    n_folders: 2
+    phi_slope_max: 0.012193355583173944
+    z0_max: 14.220353082111805
+    load_full_event: False
+      #use_cylindrical_std: False
+      #use_hit_type: False
+    n_mix: 10
+    use_intt: True
+    construct_edges: true
+
+
+model:
+    name: agat_active
+    input_dim: 5
+    hidden_dim: 16
+    hidden_activation: ReLU
+    n_graph_iters: 1
+    layer_norm: true
+    loss_func: binary_cross_entropy_with_logits
+    add_n_hits: false
+
+optimizer:
+    name: Adam
+    learning_rate: 0.0001
+    weight_decay: 1.e-4
+    lr_decay_schedule:
+        - {start_epoch: 8, end_epoch: 16, factor: 0.1}
+    beta_1: 0.9
+    beta_2: 0.999
+    eps: 1.0e-8
+
+training:
+    n_total_epochs: 5

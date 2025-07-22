@@ -1,0 +1,46 @@
+wandb_version: 1
+
+data.batch_size:
+  value: 256
+data.max_radius:
+  value: 0.004561046840476861
+data.n_test:
+  value: 100000
+data.n_train:
+  value: 500000
+data.n_valid:
+  value: 100000
+data.n_workers:
+  value: 16
+data.name:
+  value: pixel_graph
+data.nontrigger_input_dir:
+  value: /ssd2/giorgian/pixels-data-august-2022/nontrigger/0
+data.trigger_input_dir:
+  value: /ssd2/giorgian/pixels-data-august-2022/trigger/1/
+epochs:
+  value: 16
+model.hidden_dim:
+  value: 64
+model.input_dim:
+  value: 3
+model.name:
+  value: gat
+optimizer.beta_1:
+  value: 0.6446493450054483
+optimizer.beta_2:
+  value: 0.999
+optimizer.eps:
+  value: 7.528193122554254e-06
+optimizer.finetune_factor:
+  value: 7.464002381174356e-07
+optimizer.learning_rate:
+  value: 0.004245030580030962
+optimizer.learning_rate_decay_rate:
+  value: 0.797905782953318
+optimizer.type:
+  value: Adam
+optimizer.weight_decay:
+  value: 7.83624554964332e-06
+output_dir:
+  value: train_results/cluster-gat/

@@ -1,0 +1,66 @@
+wandb_version: 1
+
+data.batch_size:
+  value: 64
+data.construct_edges:
+  value: false
+data.input_dir:
+  value: /ssd3/giorgian/hits-data-august-2024/trigger/1/
+data.input_dir2:
+  value: /ssd3/giorgian/hits-data-august-2024/nontrigger/1/
+data.load_full_event:
+  value: false
+data.n_folders:
+  value: 2
+data.n_mix:
+  value: 1
+data.n_train:
+  value: 250000
+data.n_valid:
+  value: 100000
+data.n_workers:
+  value: 16
+data.name:
+  value: hit_graph_trigger_pileup
+data.phi_slope_max:
+  value: 0.012193355583173944
+data.real_weight:
+  value: 1
+data.use_intt:
+  value: true
+data.z0_max:
+  value: 14.220353082111805
+model.hidden_activation:
+  value: PReLU
+model.hidden_dim:
+  value: 16
+model.input_dim:
+  value: 5
+model.layer_norm:
+  value: true
+model.loss_func:
+  value: binary_cross_entropy_with_logits
+model.n_graph_iters:
+  value: 1
+model.name:
+  value: garnet_trigger
+optimizer.beta_1:
+  value: 0.5314876882833337
+optimizer.beta_2:
+  value: 0.999
+optimizer.eps:
+  value: 2.316498786142592e-05
+optimizer.learning_rate:
+  value: 0.000591052397546349
+optimizer.learning_rate_decay_rate:
+  value: 0.9426126564624672
+optimizer.name:
+  value: Adam
+optimizer.weight_decay:
+  value: 3.193027546852373e-05
+output_dir:
+  value: trigger_results/agnn/
+trainer.name:
+  value: gnn_trigger
+training.n_total_epochs:
+  value: 12

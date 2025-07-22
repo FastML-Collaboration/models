@@ -1,0 +1,38 @@
+model_name: SAGPool
+output_dir: /home/tingting/kdd2022/trigger_pred/wandb_results_kdd2022/
+epochs: 50
+
+model_name_on_wandb: SAGPool
+
+model:
+  learning_rate: 0.0005
+  lr_scheduler_decrease_rate: 0.995
+  is_hierarchical: True
+  num_features: 4 #16
+  nhid: 16
+  num_classes: 2
+  pooling_ratio: 0.5
+  dropout_ratio: 0.5
+
+data:
+    name: hits_loader
+    input_dir: /home/tingting/Data/tracking_result_allinfo/tracking_result_with_noise_In_dim32
+    # input_dir: /superhome/tingtingxuan/Data/tracking_result_allinfo/tracking_result_with_noise_In_dim32
+    # input_dir: /home/tingting/tracking/tracking_result_with_noise_In
+    # input_dir: ../prepare/scaled_hits_data/nontrigger-event/NN
+    n_train: 300000
+    n_valid: 100000
+    real_weight: 1
+    false_weight: 1
+    batch_size: 1000
+    n_input_dir: 2
+    input_dir2: /home/tingting/Data/tracking_result_allinfo/tracking_result_with_noise_D0_dim32
+    # input_dir2: /superhome/tingtingxuan/Data/tracking_result_allinfo/tracking_result_with_noise_D0_dim32
+    # input_dir2: /home/tingting/tracking/tracking_result_with_noise_D0
+    # input_dir3: ../prepare/hits_data/nontrigger-event/ND
+    random_permutation: True
+    n_train2: 300000
+    n_valid2: 100000
+    n_train3: 0 #00
+    n_valid3: 0 #00
+

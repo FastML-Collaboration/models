@@ -1,0 +1,78 @@
+wandb_version: 1
+
+data.apply_constraints:
+  value: false
+data.batch_size:
+  value: 24
+data.construct_edges:
+  value: true
+data.input_dir:
+  value: /ssd3/giorgian/hits-data-january-2024-yasser/trigger/events/
+data.input_dir2:
+  value: /ssd3/giorgian/hits-data-january-2024-yasser/nontrigger/events/
+data.load_full_event:
+  value: false
+data.n_folders:
+  value: 2
+data.n_mix:
+  value: 20
+data.n_train:
+  value: 25000
+data.n_valid:
+  value: 5000
+data.n_workers:
+  value: 16
+data.name:
+  value: hit_graph_bp
+data.phi_slope_max:
+  value: 0.012193355583173944
+data.ramp_rate:
+  value: 3
+data.ramp_up_nmix:
+  value: true
+data.real_weight:
+  value: 94.65391649905398
+data.trigger_edge_weight:
+  value: 10
+data.use_intt:
+  value: true
+data.z0_max:
+  value: 14.220353082111805
+model.hidden_activation:
+  value: ReLU
+model.hidden_dim:
+  value: 64
+model.intt_input_dim:
+  value: 10
+model.layer_norm:
+  value: false
+model.loss_func:
+  value: binary_cross_entropy_with_logits
+model.mvtx_input_dim:
+  value: 5
+model.n_graph_iters:
+  value: 1
+model.n_layers:
+  value: 3
+model.name:
+  value: bgn_st_tracking
+optimizer.beta_1:
+  value: 0.8650705319291668
+optimizer.beta_2:
+  value: 0.999
+optimizer.eps:
+  value: 0.0020099572440812397
+optimizer.learning_rate:
+  value: 0.0011101299113183563
+optimizer.learning_rate_decay_rate:
+  value: 0.9011151593737764
+optimizer.name:
+  value: Adam
+optimizer.weight_decay:
+  value: 0.0005312336690527589
+output_dir:
+  value: tracking_results/agnn/
+trainer.name:
+  value: gnn_sparse
+training.n_total_epochs:
+  value: 18

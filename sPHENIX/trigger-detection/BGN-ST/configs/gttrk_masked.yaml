@@ -1,0 +1,52 @@
+output_dir: train_results/biatt-pnet/
+wandb:
+  project_name: physics-trigger
+  run_name: pnet
+  tags: ["blri", "loopy", "layernorm", "batchnorm", "prelu"]
+
+epochs: 2
+optimizer:
+  type: Adam
+  learning_rate: 1.0e-3
+  beta_1: 0.9
+  beta_2: 0.99
+  eps: 1.0e-8
+  weight_decay: 0.1
+  learning_rate_decay_rate: 0.8
+
+model:
+  num_features: 32
+  layers_spec: [[72, 12], [72, 12], [72, 12], [72, 12], [72, 12], [72, 12], [72, 12], [72, 12], [72, 12], [72, 12], [72, 12]]
+  ln: True
+  bn: True
+  num_classes: 2
+  aggregator_activation: softmax
+  recalculate_hits_mean: True
+  self_split: False
+  hidden_activation: PReLU
+
+
+
+data:
+        name: gt-trkvec-masked
+        trigger_input_dir: /ssd2/giorgian/HFML-NewFiles/trigger/1/
+        nontrigger_input_dir: /ssd2/giorgian/HFML-NewFiles/nontrigger/0/
+
+        n_train: 500000
+        n_valid: 100000
+        n_test: 100000
+        batch_size: 512
+
+        add_geo_features: True
+        use_radius: True
+        use_center: True
+        use_predicted_pz: True
+        use_energy: False
+        use_momentum: False
+        use_transverse_momentum: False
+        use_parallel_momentum: False
+
+        use_physics_pred: False
+
+        n_workers: 16
+        load_complete_graph: False

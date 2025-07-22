@@ -1,0 +1,135 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.13.9
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.10.9
+    start_time: 1722973973.138515
+    t:
+      1:
+      - 1
+      - 5
+      - 51
+      - 53
+      - 55
+      - 77
+      2:
+      - 1
+      - 5
+      - 51
+      - 53
+      - 55
+      - 77
+      3:
+      - 23
+      - 37
+      4: 3.10.9
+      5: 0.13.9
+      8:
+      - 5
+data.batch_size:
+  desc: null
+  value: 12
+data.construct_edges:
+  desc: null
+  value: false
+data.drop_l1:
+  desc: null
+  value: true
+data.drop_l2:
+  desc: null
+  value: true
+data.input_dir:
+  desc: null
+  value: /ssd3/giorgian/hits-data-march-2024/trigger/1/
+data.input_dir2:
+  desc: null
+  value: /ssd2/giorgian/hits-data-august-2022/nontrigger/0/
+data.intt_filter:
+  desc: null
+  value: true
+data.load_full_event:
+  desc: null
+  value: false
+data.n_folders:
+  desc: null
+  value: 2
+data.n_mix:
+  desc: null
+  value: 10
+data.n_train:
+  desc: null
+  value: 800000
+data.n_valid:
+  desc: null
+  value: 175000
+data.n_workers:
+  desc: null
+  value: 16
+data.name:
+  desc: null
+  value: hit_graph_trigger_pileup
+data.phi_slope_max:
+  desc: null
+  value: 0.012193355583173944
+data.real_weight:
+  desc: null
+  value: 1
+data.z0_max:
+  desc: null
+  value: 14.220353082111805
+model.hidden_activation:
+  desc: null
+  value: PReLU
+model.hidden_dim:
+  desc: null
+  value: 16
+model.input_dim:
+  desc: null
+  value: 5
+model.layer_norm:
+  desc: null
+  value: true
+model.loss_func:
+  desc: null
+  value: binary_cross_entropy_with_logits
+model.n_graph_iters:
+  desc: null
+  value: 1
+model.name:
+  desc: null
+  value: garnet_trigger
+optimizer.beta_1:
+  desc: null
+  value: 0.41255119698490833
+optimizer.beta_2:
+  desc: null
+  value: 0.999
+optimizer.eps:
+  desc: null
+  value: 1.194682407116432e-06
+optimizer.learning_rate:
+  desc: null
+  value: 0.0002897638909564345
+optimizer.learning_rate_decay_rate:
+  desc: null
+  value: 0.9893756595286444
+optimizer.name:
+  desc: null
+  value: Adam
+optimizer.weight_decay:
+  desc: null
+  value: 1.3599474973108927e-05
+output_dir:
+  desc: null
+  value: trigger_results/agnn/
+trainer.name:
+  desc: null
+  value: gnn_trigger
+training.n_total_epochs:
+  desc: null
+  value: 12

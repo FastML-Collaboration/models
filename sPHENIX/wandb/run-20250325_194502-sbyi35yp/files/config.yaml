@@ -1,0 +1,155 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    python_version: 3.12.2
+    cli_version: 0.17.7
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1742946302
+    t:
+      1:
+      - 1
+      - 5
+      - 51
+      - 53
+      - 55
+      - 77
+      2:
+      - 1
+      - 5
+      - 51
+      - 53
+      - 55
+      - 77
+      3:
+      - 2
+      - 23
+      - 37
+      4: 3.12.2
+      5: 0.17.7
+      8:
+      - 5
+      13: linux-x86_64
+data.apply_constraints:
+  desc: null
+  value: true
+data.batch_size:
+  desc: null
+  value: 24
+data.construct_edges:
+  desc: null
+  value: true
+data.input_dir:
+  desc: null
+  value: /ssd3/giorgian/hits-data-january-2024-yasser/trigger/events/
+data.input_dir2:
+  desc: null
+  value: /ssd3/giorgian/hits-data-january-2024-yasser/nontrigger/events/
+data.load_full_event:
+  desc: null
+  value: false
+data.n_folders:
+  desc: null
+  value: 2
+data.n_mix:
+  desc: null
+  value: 20
+data.n_train:
+  desc: null
+  value: 25000
+data.n_valid:
+  desc: null
+  value: 5000
+data.n_workers:
+  desc: null
+  value: 16
+data.name:
+  desc: null
+  value: hit_graph_bp
+data.phi_slope_max:
+  desc: null
+  value: 0.012193355583173944
+data.ramp_rate:
+  desc: null
+  value: 3
+data.ramp_up_nmix:
+  desc: null
+  value: true
+data.real_weight:
+  desc: null
+  value: 7.665206597994385
+data.trigger_edge_weight:
+  desc: null
+  value: 10
+data.use_intt:
+  desc: null
+  value: true
+data.z0_max:
+  desc: null
+  value: 14.220353082111805
+model.hidden_activation:
+  desc: null
+  value: ReLU
+model.hidden_dim:
+  desc: null
+  value: 64
+model.intt_input_dim:
+  desc: null
+  value: 10
+model.layer_norm:
+  desc: null
+  value: false
+model.loss_func:
+  desc: null
+  value: binary_cross_entropy_with_logits
+model.mvtx_input_dim:
+  desc: null
+  value: 5
+model.n_graph_iters:
+  desc: null
+  value: 1
+model.n_layers:
+  desc: null
+  value: 2
+model.name:
+  desc: null
+  value: bgn_st_tracking
+model.predict_ip:
+  desc: null
+  value: true
+model.predict_trigger:
+  desc: null
+  value: true
+optimizer.beta_1:
+  desc: null
+  value: 0.9726890230467448
+optimizer.beta_2:
+  desc: null
+  value: 0.999
+optimizer.eps:
+  desc: null
+  value: 0.009269945344655191
+optimizer.learning_rate:
+  desc: null
+  value: 0.0003303053588284349
+optimizer.learning_rate_decay_rate:
+  desc: null
+  value: 0.8112556710315743
+optimizer.name:
+  desc: null
+  value: Adam
+optimizer.weight_decay:
+  desc: null
+  value: 1.8319590589603388e-05
+output_dir:
+  desc: null
+  value: tracking_results/agnn/
+trainer.name:
+  desc: null
+  value: gnn_sparse_ip_trigger
+training.n_total_epochs:
+  desc: null
+  value: 18

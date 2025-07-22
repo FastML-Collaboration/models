@@ -1,0 +1,66 @@
+wandb_version: 1
+
+data.batch_size:
+  value: 512
+data.input_dir:
+  value: /ssd3/giorgian/hits-data-august-2022-bp/trigger/1/
+data.input_dir2:
+  value: /ssd3/giorgian/hits-data-august-2022-bp/nontrigger/0/
+data.load_full_event:
+  value: false
+data.n_folders:
+  value: 2
+data.n_train:
+  value: 60000
+data.n_valid:
+  value: 10000
+data.n_workers:
+  value: 16
+data.name:
+  value: hit_graph_trigger
+data.phi_slope_max:
+  value: 0.012193355583173944
+data.real_weight:
+  value: 1
+data.use_cylindrical_std:
+  value: false
+data.use_hit_type:
+  value: false
+data.use_n_pixels:
+  value: false
+data.z0_max:
+  value: 14.220353082111805
+model.hidden_activation:
+  value: PReLU
+model.hidden_dim:
+  value: 16
+model.input_dim:
+  value: 4
+model.layer_norm:
+  value: true
+model.loss_func:
+  value: binary_cross_entropy_with_logits
+model.n_graph_iters:
+  value: 3
+model.name:
+  value: agnn_trigger
+optimizer.beta_1:
+  value: 0.8468167813249506
+optimizer.beta_2:
+  value: 0.999
+optimizer.eps:
+  value: 1.5982805480429748e-06
+optimizer.learning_rate:
+  value: 0.00046739915673415226
+optimizer.learning_rate_decay_rate:
+  value: 0.9578754080843584
+optimizer.name:
+  value: Adam
+optimizer.weight_decay:
+  value: 3.216271396436761e-05
+output_dir:
+  value: /disks/disk1/giorgian/old-trainings/trigger_results/trigger_results/agnn/
+trainer.name:
+  value: gnn_trigger
+training.n_total_epochs:
+  value: 12

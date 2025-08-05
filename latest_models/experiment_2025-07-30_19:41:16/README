@@ -1,0 +1,6 @@
+This performs tracking on the beauty particle hits.
+20 event pile-up is assumed.
+This model is agnn
+
+
+{'data': {'batch_size': 12, 'construct_edges': True, 'input_dir': '/ssd3/giorgian/hits-data-january-2024-yasser/trigger/events/', 'input_dir2': '/ssd3/giorgian/hits-data-january-2024-yasser/nontrigger/events/', 'load_full_event': False, 'n_folders': 2, 'n_mix': 20, 'n_train': 25000, 'n_valid': 5000, 'n_workers': 16, 'name': 'hit_graph_trigger_pileup', 'phi_slope_max': 0.012193355583173944, 'ramp_rate': 3, 'ramp_up_nmix': True, 'real_weight': 1, 'use_intt': True, 'z0_max': 14.220353082111805}, 'model': {'hidden_activation': 'PReLU', 'hidden_dim': 64, 'input_dim': 5, 'layer_norm': True, 'loss_func': 'binary_cross_entropy_with_logits', 'n_graph_iters': 3, 'name': 'agnn'}, 'optimizer': {'beta_1': 0.41824875372507897, 'beta_2': 0.999, 'eps': 3.2250721475503293e-06, 'learning_rate': 0.0006625064026796742, 'name': 'Adam', 'weight_decay': 9.410247033729872e-07}, 'output_dir': 'tracking_results/agnn/agnn-lr0.0006625064026796742-b12-d64-PReLU-gi3-ln-True-n50000/experiment_2025-07-30_19:41:16', 'trainer': {'name': 'gnn_sparse'}, 'training': {'n_total_epochs': 12}, 'wandb': 'agnn-trigger', 'model_name_on_wandb': 'agnn', 'lr_decay_schedule': [{'start_epoch': 0, 'end_epoch': 10, 'factor': 0.8008953195085619}], 'n_ranks': 1}

@@ -1,0 +1,12 @@
+In this directory you will find the model weights and inferences for two problems:
+
+1. Trigger Detection. Produces a graph-level classification, of whether the event is a trigger event or not.
+2. Tracking. Produces an edge-level classification, of whether the edge candidate connects two hits from the same particle.
+
+There are two model types that solve each problem. The graph-convolutional model (GCN) and the bipartite model (BP). Trained models of each type are provided for each problem.
+
+Inference results are available in each experiment directory under the `inference_*/` directory. This has the inputs along with the outputs, allowing verification of model implementation.
+
+Each directory has a `load_model.py` script, showing how to load the model and data loaders. Update the `model_results_folder` variable with the appropiate `experiment_*` directory. The script must be placed in `models/sPHENIX/tracking-GNN` to function.
+
+

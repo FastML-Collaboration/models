@@ -10,3 +10,4 @@ Inference results are available in each experiment directory under the `inferenc
 Each directory has a `load_model.py` script, showing how to load the model and data loaders. Update the `model_results_folder` variable with the appropiate `experiment_*` directory. The script must be placed in `models/sPHENIX/tracking-GNN` to function.
 
 
+20-event pileup is assumed for all the models: thus, 20 events are pileup in the MVTX. There is only one event in the INTT. The dataloaders automatically handle the pileup creation.
